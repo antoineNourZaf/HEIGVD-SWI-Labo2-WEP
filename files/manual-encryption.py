@@ -22,7 +22,7 @@ if __name__ == '__main__':
     seed = arp.iv + key
 
     # Calcul de l'ICV
-    icv = binascii.crc32(plaintext)
+    icv = zlib.crc32(plaintext)
     icv_clair = struct.pack('<i', icv)
 
     # on concatene l'icv et le plaintext
